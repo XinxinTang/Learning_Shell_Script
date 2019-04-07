@@ -1,5 +1,0 @@
-Shell 
-
-
-useradd/adduser, userdel,
-groupadd, groupdel;
