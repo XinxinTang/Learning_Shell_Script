@@ -9,6 +9,8 @@ su
 sudo
 who
 which: display commands save path
+type
+time 
 
 touch:
 cat:
@@ -116,6 +118,242 @@ executes many commands
 file type: text; binary;  Dir; Link; Device; Pipe
 
 
+# If-then 
+```
+if expression
+then
+commands
+fi
+
+
+if expressions
+then
+   commands1
+ else
+   commands2
+fi 
+
+```
+
+```
+echo 
+if test 3 -le 5
+then 
+  echo 3 is less than 5
+fi
+  echo 
+
+echo 
+if test 5 -le 3
+then 
+  echo 5 is less than 3
+fi
+```
+
+```
+-le: less than
+-ge: greater than 
+```
+
+```
+case variable in
+pattern1) commands1;;
+pattern2|pattern3) commands2;;
+*)command3;;
+esac
+```
+
+```
+select <variable> in <list>
+do 
+  commands
+done
+```
+
+# Loop
+
+```
+for <variable> in <range list>
+do
+  commands;
+done
+```
+
+```
+for(expression1; expression2; expression3)
+{
+
+	loop code;
+}
+
+for((expression1; expression2; expression3))
+do
+  loop code;
+done 
+```
+
+```
+while test <expression>
+do
+  commands
+done
+
+
+while[$num -gt 3 -a $num -lt 6]
+do 
+   echo num=$num
+let num++
+done 
+```
+
+
+```
+until test expression
+do
+  commands;
+done;
+```
+
+```
+break
+continue
+```
+
+# Function
+
+```
+<function name>
+{
+	commands
+}
+```
+
+```
+name()
+{
+	echo "call name function"
+}
+```
+
+```
+return 
+```
+
+```
+local num: 
+num: default is global
+```
+
+```
+nums1=(1,2,3,4,5)
+```
+
+# Optimization
+- Redirection is better than Pipe while the script is doing a repeat thing
+
+- We'd better no use high-level tools like awk, sed if the internal command can do it. (because it will create a new process, cost CPU and Memory resource)
+
+Common options for commands
+```
+-a: display the whole content
+-c: execute count function
+-d: target directory
+-e: unfold content
+-f: fetch file from a target directory
+-h: get help info
+-r: process files in recursive way
+-y: answer Yes for all following questions
+-v: fetch verison info
+-i: case insenstive
+```
+
+Arithmetic Operation
+```
+let command
+(()) command
+expr 
+```
+
+# Regular Expression
+
+# grep 
+grep [option] [pattern] [file list]
+fetch a target file from a directory.
+
+options:
+-c: output count 
+-i: case insenstive
+-h: don't display file name
+-n: display matching line and row lone
+-s: don't display non-existed or non-matching error info
+-v: 
+-E:
+
+egrep: search from one or more files
+
+fgrep: search string from files
+
+
+# sed
+streaming editor
+
+replace; delete; add; 
+
+
+# gawk
+
+# Script Control
+
+nohup: the process will not terminated if you logout current shell
+&: the process will terminated if you logout current shell
+ 
+## Priority:
+ PRI, NI.
+
+Set priority:
+nice[-n <priority level>][commands]
+renice [priority level][-g <>][-p < >][-u < >]
+
+
+# Project Plan
+at: process one-time plan 
+
+-m
+-l
+-d
+-v
+-c
+-V
+-q
+-f
+-t
+
+atq: list all tasks in a queue
+
+-q
+-V
+
+cron: process plan periodically
+
+-e
+-l
+
+
+ftp
+nfs
+
+
+## Log
+syslogd
+
+tar
+-x: unpack
+-c: pack up
+-t: list all file
+-v: diaplay file during packing up
+-z: if it has zip attribute
+-f: use file package name
+-p: use original file attribute
 
 
 
