@@ -1,4 +1,4 @@
-Shell 
+Shell Programming 
 
 # Common commands
 useradd/adduser, userdel,
@@ -46,6 +46,7 @@ free
 
 df
 fdisk
+
 
 # Variables in Shell Script
 Pass value:
